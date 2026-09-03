@@ -67,8 +67,8 @@ export const EXERCISES: Exercise[] = [
     name: '4 ראשי ישיבה',
     hint: 'הארכת ברכיים בישיבה',
     muscle: 'legs',
-    image: pexels(9152547),
-    imageFallback: unsplash('photo-1434682881908-b43d0467b798'),
+    image: pexels(28731788),
+    imageFallback: pexels(9152547),
     imageFit: 'cover',
   },
   {
