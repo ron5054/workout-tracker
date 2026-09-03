@@ -5,20 +5,15 @@
   --font-sans: 'Heebo', ui-sans-serif, system-ui, sans-serif;
 }
 
-html {
-  min-height: 100%;
-  min-height: -webkit-fill-available;
-}
-
 html,
 body {
-  overflow-x: hidden;
-  overscroll-behavior-y: none;
+  height: 100%;
+  max-height: 100%;
+  margin: 0;
+  overflow: hidden;
 }
 
 body {
-  margin: 0;
-  min-height: 100dvh;
   font-family: var(--font-sans);
   background:
     radial-gradient(900px 420px at 100% -10%, rgba(212, 255, 63, 0.08), transparent 45%),
@@ -31,7 +26,13 @@ body {
 }
 
 #root {
-  min-height: 100dvh;
+  height: 100%;
+  max-height: 100%;
+  min-height: 0;
+  overflow-x: clip;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 .app-shell {

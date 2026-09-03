@@ -31,7 +31,7 @@ export const App = () => {
 
   if (selected) {
     return (
-      <main className="app-shell min-h-dvh">
+      <main className="app-shell min-h-full">
         <ExerciseDetail
           exercise={selected}
           logs={logsByExercise(selected.id)}
@@ -44,7 +44,7 @@ export const App = () => {
   }
 
   return (
-    <main className="app-shell min-h-dvh">
+    <main className="app-shell min-h-full">
       <div className="mx-auto flex w-full max-w-5xl flex-col gap-5">
         <header className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div className="space-y-2">
