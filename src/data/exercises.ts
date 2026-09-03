@@ -76,8 +76,8 @@ export const EXERCISES: Exercise[] = [
     name: '4 ראשי שכיבה',
     hint: 'מכונת רגליים בשכיבה',
     muscle: 'legs',
-    image: pexels(28731788),
-    imageFallback: pexels(9152547),
+    image: 'https://www.tevabari.co.il/images/article-new/361134620.jpg',
+    imageFallback: pexels(28731788),
     imageFit: 'cover',
   },
   {
