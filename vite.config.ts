@@ -93,6 +93,18 @@ export default defineConfig({
             },
           },
           {
+            urlPattern: /^https:\/\/totalfitness\.co\.il\/.*/i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'totalfitness-images',
+              expiration: {
+                maxEntries: 8,
+                maxAgeSeconds: 60 * 60 * 24 * 30,
+              },
+              cacheableResponse: { statuses: [0, 200] },
+            },
+          },
+          {
             urlPattern: /^https:\/\/fonts\.(googleapis|gstatic)\.com\/.*/i,
             handler: 'CacheFirst',
             options: {

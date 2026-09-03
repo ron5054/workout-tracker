@@ -113,8 +113,10 @@ export const EXERCISES: Exercise[] = [
     name: 'בטן על בוסו',
     hint: 'כפיפות בטן על כדור בוסו',
     muscle: 'abs',
-    image: unsplash('photo-1518611012118-696072aa579a'),
-    imageFallback: pexels(4164761),
+    image:
+      'https://totalfitness.co.il/wp-content/uploads/2020/11/Inkedproducts1707_LI-430x430.jpg',
+    imageFallback:
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Half_ab_ball_or_BOSU_Ball.webp/960px-Half_ab_ball_or_BOSU_Ball.webp',
     imageFit: 'cover',
   },
   {
@@ -129,11 +131,12 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: 'tbar-row',
-    name: 'חתירת גב ברכינה',
+    name: 'חתירה טי בר',
     hint: 'רוכנים קדימה ומושכים מלמטה למעלה',
     muscle: 'back',
-    image: unsplash('photo-1603287681836-b174ce5074c2'),
-    imageFallback: pexels(3253498),
+    image:
+      'https://totalfitness.co.il/wp-content/uploads/2021/04/tb61-%EF%BC%8824.5965_result-430x430.jpg',
+    imageFallback: unsplash('photo-1603287681836-b174ce5074c2'),
     imageFit: 'cover',
   },
 ]
