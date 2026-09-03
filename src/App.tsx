@@ -31,7 +31,7 @@ export const App = () => {
 
   if (selected) {
     return (
-      <main className="min-h-dvh px-4 py-5">
+      <main className="app-shell min-h-dvh">
         <ExerciseDetail
           exercise={selected}
           logs={logsByExercise(selected.id)}
@@ -44,16 +44,18 @@ export const App = () => {
   }
 
   return (
-    <main className="min-h-dvh px-4 py-6">
-      <div className="mx-auto flex w-full max-w-5xl flex-col gap-6">
-        <header className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+    <main className="app-shell min-h-dvh">
+      <div className="mx-auto flex w-full max-w-5xl flex-col gap-5">
+        <header className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 rounded-full border border-lime-300/20 bg-lime-300/10 px-3 py-1 text-xs font-semibold text-lime-300">
               <Dumbbell className="size-3.5" />
               שמירה מקומית במכשיר
             </div>
-            <h1 className="text-4xl font-black tracking-tight text-zinc-50">המכונות שלי</h1>
-            <p className="max-w-xl text-zinc-400">
+            <h1 className="text-[2rem] leading-none font-black tracking-tight text-zinc-50 sm:text-4xl">
+              המכונות שלי
+            </h1>
+            <p className="max-w-xl text-sm leading-relaxed text-zinc-400 sm:text-base">
               תמונת המכשיר והמשקל האחרון שעשית. הכל נשמר בטלפון, בלי חשבון ובלי ענן.
             </p>
           </div>
@@ -64,18 +66,20 @@ export const App = () => {
           </p>
         </header>
 
-        <div className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1">
-          {MUSCLE_FILTERS.map((item) => (
-            <Button
-              key={item.id}
-              size="sm"
-              variant={filter === item.id ? 'default' : 'secondary'}
-              onClick={() => setFilter(item.id)}
-              className="shrink-0"
-            >
-              {item.label}
-            </Button>
-          ))}
+        <div className="relative sticky top-[env(safe-area-inset-top)] z-20 -mx-4 border-b border-zinc-800/70 bg-[#0c0d10]/90 px-4 py-2 backdrop-blur-md before:absolute before:inset-x-0 before:bottom-full before:h-[env(safe-area-inset-top)] before:bg-[#0c0d10]/90">
+          <div className="no-scrollbar flex gap-2 overflow-x-auto overscroll-x-contain pb-1">
+            {MUSCLE_FILTERS.map((item) => (
+              <Button
+                key={item.id}
+                size="sm"
+                variant={filter === item.id ? 'default' : 'secondary'}
+                onClick={() => setFilter(item.id)}
+                className="h-11 min-w-11 shrink-0 px-4"
+              >
+                {item.label}
+              </Button>
+            ))}
+          </div>
         </div>
 
         <section className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">

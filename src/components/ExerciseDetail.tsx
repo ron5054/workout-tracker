@@ -24,11 +24,11 @@ export const ExerciseDetail = ({
   const last = logs[0]
 
   return (
-    <div className="mx-auto flex w-full max-w-2xl flex-col gap-5 pb-10">
-      <div className="flex items-center justify-between gap-3">
-        <Button variant="ghost" onClick={onBack} className="px-2">
+    <div className="mx-auto flex w-full max-w-2xl flex-col gap-5 pb-6">
+      <div className="sticky top-[env(safe-area-inset-top)] z-20 -mx-1 flex items-center justify-between gap-3 bg-[#0c0d10]/90 py-1 backdrop-blur-md">
+        <Button variant="ghost" onClick={onBack} className="h-11 min-w-11 px-2">
           <ArrowRight />
-          חזרה למכונות
+          חזרה
         </Button>
         <span className="rounded-full bg-zinc-800 px-3 py-1 text-xs text-zinc-300">
           {MUSCLE_LABELS[exercise.muscle]}
@@ -37,11 +37,11 @@ export const ExerciseDetail = ({
 
       <MachineImage
         exercise={exercise}
-        className="aspect-[16/10] w-full rounded-3xl border border-zinc-800"
+        className="aspect-[16/9] w-full rounded-3xl border border-zinc-800 sm:aspect-[16/10]"
       />
 
       <header className="space-y-1">
-        <h1 className="text-3xl font-black text-zinc-50">{exercise.name}</h1>
+        <h1 className="text-[1.75rem] font-black text-zinc-50 sm:text-3xl">{exercise.name}</h1>
         <p className="text-zinc-400">{exercise.hint}</p>
         {last ? (
           <p className="pt-2 text-4xl font-black text-lime-300">{formatWeight(last.weight)}</p>
@@ -75,11 +75,11 @@ export const ExerciseDetail = ({
               return (
                 <li
                   key={log.id}
-                  className="flex items-center justify-between gap-3 rounded-2xl border border-zinc-800 bg-zinc-900/60 px-4 py-3"
+                  className="flex items-start justify-between gap-3 rounded-2xl border border-zinc-800 bg-zinc-900/60 px-4 py-3"
                 >
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-lg font-bold text-zinc-50">{formatWeight(log.weight)}</p>
-                    <p className="text-sm text-zinc-400">
+                    <p className="text-sm leading-relaxed break-words text-zinc-400">
                       {log.sets} סטים × {log.reps} חזרות · {formatDateTime(log.at)}
                     </p>
                     {older && delta !== 0 && (

@@ -66,6 +66,8 @@ export const LogForm = ({
             min="0"
             value={Number.isFinite(weight) ? weight : ''}
             onChange={(event) => setWeight(Number(event.target.value))}
+            autoComplete="off"
+            enterKeyHint="done"
             className="text-center text-xl font-bold"
           />
           <Button
@@ -111,6 +113,7 @@ export const LogForm = ({
             inputMode="numeric"
             type="number"
             min="1"
+            autoComplete="off"
             value={Number.isFinite(reps) ? reps : ''}
             onChange={(event) => setReps(Number(event.target.value))}
           />
@@ -122,6 +125,7 @@ export const LogForm = ({
             inputMode="numeric"
             type="number"
             min="1"
+            autoComplete="off"
             value={Number.isFinite(sets) ? sets : ''}
             onChange={(event) => setSets(Number(event.target.value))}
           />

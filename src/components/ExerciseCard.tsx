@@ -25,8 +25,12 @@ export const ExerciseCard = ({
 
   return (
     <article className="overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/80 shadow-lg shadow-black/20">
-      <button type="button" onClick={onOpen} className="block w-full text-right">
-        <MachineImage exercise={exercise} className="aspect-[4/3] w-full" />
+      <button
+        type="button"
+        onClick={onOpen}
+        className="block w-full touch-manipulation text-right active:bg-zinc-800/40"
+      >
+        <MachineImage exercise={exercise} className="aspect-[16/10] w-full sm:aspect-[4/3]" />
         <div className="space-y-2 p-4">
           <div className="flex items-start justify-between gap-3">
             <div>
@@ -40,7 +44,7 @@ export const ExerciseCard = ({
           {last ? (
             <div className="flex items-end justify-between gap-2">
               <div>
-                <p className="text-3xl font-black tracking-tight text-lime-300">
+                <p className="text-[1.75rem] leading-none font-black tracking-tight text-lime-300 sm:text-3xl">
                   {formatWeight(last.weight)}
                 </p>
                 <p className="text-xs text-zinc-400">
