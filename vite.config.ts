@@ -45,10 +45,10 @@ export default defineConfig({
         navigateFallback: '/index.html',
         runtimeCaching: [
           {
-            urlPattern: /^https:\/\/(upload|thumb)\.wikimedia\.org\/.*/i,
+            urlPattern: /^https:\/\/images\.pexels\.com\/.*/i,
             handler: 'CacheFirst',
             options: {
-              cacheName: 'machine-images',
+              cacheName: 'pexels-images',
               expiration: {
                 maxEntries: 40,
                 maxAgeSeconds: 60 * 60 * 24 * 30,
@@ -61,6 +61,18 @@ export default defineConfig({
             handler: 'CacheFirst',
             options: {
               cacheName: 'unsplash-images',
+              expiration: {
+                maxEntries: 24,
+                maxAgeSeconds: 60 * 60 * 24 * 30,
+              },
+              cacheableResponse: { statuses: [0, 200] },
+            },
+          },
+          {
+            urlPattern: /^https:\/\/upload\.wikimedia\.org\/.*/i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'wikimedia-images',
               expiration: {
                 maxEntries: 12,
                 maxAgeSeconds: 60 * 60 * 24 * 30,

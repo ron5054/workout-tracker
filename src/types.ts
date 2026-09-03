@@ -6,6 +6,7 @@ export type Exercise = {
   hint: string
   muscle: MuscleGroup
   image: string
+  imageFallback?: string
   imageFit: 'cover' | 'contain'
 }
 

@@ -19,14 +19,20 @@ export const MUSCLE_FILTERS: Array<{ id: MuscleGroup | 'all'; label: string }> =
   { id: 'abs', label: 'בטן' },
 ]
 
+const pexels = (id: number) =>
+  `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=900`
+
+const unsplash = (id: string) =>
+  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=900&q=80`
+
 export const EXERCISES: Exercise[] = [
   {
     id: 'lat-pulldown',
     name: 'פולי עליון',
     hint: 'משיכה מלמעלה לחזה',
     muscle: 'back',
-    image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Lat_pulldown_machine_20180112.jpg/800px-Lat_pulldown_machine_20180112.jpg',
+    image: pexels(18060085),
+    imageFallback: unsplash('photo-1534872724459-3a23213491fc'),
     imageFit: 'cover',
   },
   {
@@ -34,8 +40,8 @@ export const EXERCISES: Exercise[] = [
     name: 'פולי חתירה',
     hint: 'חתירה בישיבה מול הפולי',
     muscle: 'back',
-    image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Woman_using_a_seated_cable_row_machine_at_the_gym.jpg/800px-Woman_using_a_seated_cable_row_machine_at_the_gym.jpg',
+    image: pexels(3253498),
+    imageFallback: pexels(4162482),
     imageFit: 'cover',
   },
   {
@@ -43,8 +49,8 @@ export const EXERCISES: Exercise[] = [
     name: 'יד אחורית בפולי',
     hint: 'פשיטת מרפקים למטה',
     muscle: 'arms',
-    image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Sz%C3%A9kesfeh%C3%A9rv%C3%A1r%2C_Cutler_Gym%2C_Combined_cable_machine.jpg/800px-Sz%C3%A9kesfeh%C3%A9rv%C3%A1r%2C_Cutler_Gym%2C_Combined_cable_machine.jpg',
+    image: pexels(29218854),
+    imageFallback: pexels(29084391),
     imageFit: 'cover',
   },
   {
@@ -52,8 +58,8 @@ export const EXERCISES: Exercise[] = [
     name: 'יד קדמית בפולי',
     hint: 'כפיפת מרפקים מהפולי התחתון',
     muscle: 'arms',
-    image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Strong_woman_using_cable_machine_for_upper_body_workout_in_gym.jpg/800px-Strong_woman_using_cable_machine_for_upper_body_workout_in_gym.jpg',
+    image: pexels(1480520),
+    imageFallback: pexels(31818704),
     imageFit: 'cover',
   },
   {
@@ -61,8 +67,8 @@ export const EXERCISES: Exercise[] = [
     name: '4 ראשי ישיבה',
     hint: 'הארכת ברכיים בישיבה',
     muscle: 'legs',
-    image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/LegExx_Regular_Leg_Extension2.jpg/800px-LegExx_Regular_Leg_Extension2.jpg',
+    image: pexels(9152547),
+    imageFallback: unsplash('photo-1434682881908-b43d0467b798'),
     imageFit: 'cover',
   },
   {
@@ -70,8 +76,8 @@ export const EXERCISES: Exercise[] = [
     name: '4 ראשי שכיבה',
     hint: 'מכונת רגליים בשכיבה',
     muscle: 'legs',
-    image:
-      'https://upload.wikimedia.org/wikipedia/commons/c/c6/LyingLegCurlMachineExercise.JPG',
+    image: pexels(28731788),
+    imageFallback: pexels(9152547),
     imageFit: 'cover',
   },
   {
@@ -79,7 +85,9 @@ export const EXERCISES: Exercise[] = [
     name: "חזה סמית'",
     hint: 'לחיצת חזה במכונת סמית׳',
     muscle: 'chest',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/4/43/SmithMachineBenchPress.JPG',
+    image:
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Smith_machine.webp/960px-Smith_machine.webp',
+    imageFallback: pexels(34100808),
     imageFit: 'cover',
   },
   {
@@ -87,8 +95,8 @@ export const EXERCISES: Exercise[] = [
     name: 'חזה דאמבלס',
     hint: 'לחיצת חזה עם משקולות יד',
     muscle: 'chest',
-    image:
-      'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=900&q=80',
+    image: pexels(29526383),
+    imageFallback: unsplash('photo-1571019614242-c5c5dee9f50b'),
     imageFit: 'cover',
   },
   {
@@ -96,8 +104,8 @@ export const EXERCISES: Exercise[] = [
     name: 'חזה פלייס ישיבה',
     hint: 'מכונת פרפר / פק-דק',
     muscle: 'chest',
-    image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Pec_deck_Fly.jpg/800px-Pec_deck_Fly.jpg',
+    image: pexels(14616295),
+    imageFallback: pexels(6844938),
     imageFit: 'cover',
   },
   {
@@ -105,8 +113,8 @@ export const EXERCISES: Exercise[] = [
     name: 'בטן על בוסו',
     hint: 'כפיפות בטן על כדור בוסו',
     muscle: 'abs',
-    image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Half_ab_ball_or_BOSU_Ball.webp/800px-Half_ab_ball_or_BOSU_Ball.webp',
+    image: unsplash('photo-1518611012118-696072aa579a'),
+    imageFallback: pexels(4164761),
     imageFit: 'cover',
   },
   {
@@ -115,7 +123,8 @@ export const EXERCISES: Exercise[] = [
     hint: 'לחיצת כתפיים בעמידה בסמית׳',
     muscle: 'shoulders',
     image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Smith_machine.webp/800px-Smith_machine.webp',
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Smith_machine.webp/960px-Smith_machine.webp',
+    imageFallback: pexels(7289236),
     imageFit: 'cover',
   },
   {
@@ -123,8 +132,9 @@ export const EXERCISES: Exercise[] = [
     name: 'חתירת גב ברכינה',
     hint: 'רוכנים קדימה ומושכים מלמטה למעלה',
     muscle: 'back',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/e/eb/T-bar-row-2.png',
-    imageFit: 'contain',
+    image: unsplash('photo-1603287681836-b174ce5074c2'),
+    imageFallback: pexels(3253498),
+    imageFit: 'cover',
   },
 ]
 

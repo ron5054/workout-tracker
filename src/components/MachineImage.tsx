@@ -10,8 +10,13 @@ type MachineImageProps = {
 }
 
 export const MachineImage = ({ exercise, className, sizes }: MachineImageProps) => {
-  const [failed, setFailed] = useState(false)
+  const sources = [exercise.image, exercise.imageFallback].filter(
+    (value): value is string => Boolean(value),
+  )
+  const [srcIndex, setSrcIndex] = useState(0)
   const [loaded, setLoaded] = useState(false)
+  const src = sources[srcIndex]
+  const failed = !src
 
   if (failed) {
     return (
@@ -30,12 +35,18 @@ export const MachineImage = ({ exercise, className, sizes }: MachineImageProps) 
     <div className={cn('relative overflow-hidden bg-zinc-800', className)}>
       {!loaded && <div className="absolute inset-0 animate-pulse bg-zinc-800" />}
       <img
-        src={exercise.image}
+        key={src}
+        src={src}
         alt={exercise.name}
         sizes={sizes}
+        loading="lazy"
+        decoding="async"
         referrerPolicy="no-referrer"
         onLoad={() => setLoaded(true)}
-        onError={() => setFailed(true)}
+        onError={() => {
+          setLoaded(false)
+          setSrcIndex((index) => index + 1)
+        }}
         className={cn(
           'h-full w-full transition-opacity duration-300',
           exercise.imageFit === 'contain' ? 'object-contain bg-zinc-100 p-4' : 'object-cover',
