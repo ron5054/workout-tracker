@@ -101,11 +101,11 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: 'seated-fly',
-    name: 'חזה פלייס ישיבה',
-    hint: 'מכונת פרפר / פק-דק',
+    name: 'פולי פלייס',
+    hint: 'פתיחת ידיים בפולי לחזה',
     muscle: 'chest',
-    image: pexels(14616295),
-    imageFallback: pexels(6844938),
+    image: 'https://i.ytimg.com/vi/Vgppg2kbPPU/maxresdefault.jpg',
+    imageFallback: pexels(14616295),
     imageFit: 'cover',
   },
   {
