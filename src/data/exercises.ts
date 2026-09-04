@@ -82,12 +82,13 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: 'smith-chest',
-    name: "חזה סמית'",
+    name: 'לחיצת חזה בסמית משין',
     hint: 'לחיצת חזה במכונת סמית׳',
     muscle: 'chest',
     image:
+      'https://www.onebody.co.il/wp-content/uploads/2018/04/benchpress_smithmachine-1024x596.png',
+    imageFallback:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Smith_machine.webp/960px-Smith_machine.webp',
-    imageFallback: pexels(34100808),
     imageFit: 'cover',
   },
   {

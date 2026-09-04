@@ -105,6 +105,18 @@ export default defineConfig({
             },
           },
           {
+            urlPattern: /^https:\/\/www\.onebody\.co\.il\/.*/i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'onebody-images',
+              expiration: {
+                maxEntries: 8,
+                maxAgeSeconds: 60 * 60 * 24 * 30,
+              },
+              cacheableResponse: { statuses: [0, 200] },
+            },
+          },
+          {
             urlPattern: /^https:\/\/i\.ytimg\.com\/.*/i,
             handler: 'CacheFirst',
             options: {
